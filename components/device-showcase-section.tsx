@@ -1,19 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import dynamic from "next/dynamic"
-
-const Dynamic3DViewer = dynamic(() => import("./3d-viewer").then((mod) => ({ default: mod.GuardianX3DViewer })), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-[500px] bg-gradient-to-br from-muted/10 to-muted/30 rounded-2xl overflow-hidden border flex items-center justify-center">
-      <div className="text-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-2"></div>
-        <p className="text-sm text-muted-foreground">Loading 3D Model...</p>
-      </div>
-    </div>
-  ),
-})
 
 export function DeviceShowcaseSection() {
   const [showScadCode, setShowScadCode] = useState(false)
@@ -30,9 +17,24 @@ export function DeviceShowcaseSection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* 3D Model Viewer */}
+          {/* Device Image/Placeholder */}
           <div className="relative">
-            <Dynamic3DViewer />
+            <div className="w-full h-[500px] bg-gradient-to-br from-muted/10 to-muted/30 rounded-2xl overflow-hidden border flex items-center justify-center">
+              <div className="text-center">
+                <div className="w-32 h-32 mx-auto mb-4 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <svg className="w-16 h-16 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Guardian-X Detector</h3>
+                <p className="text-sm text-muted-foreground">Solar-powered AI crop protection device</p>
+              </div>
+            </div>
 
             <div className="absolute bottom-4 left-4 flex gap-2">
               <button
