@@ -15,8 +15,12 @@ export function HeroSection() {
 
           <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">Guardian-X</h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground text-balance mb-8 max-w-3xl mx-auto leading-relaxed">
-            Join us in protecting crops the smart way — for healthier plants, safer food, and a greener future.
+          <p className="text-xl md:text-2xl text-muted-foreground text-balance mb-4 max-w-3xl mx-auto leading-relaxed">
+            All-in-One Pest Monitoring and Crop Protection System for Azerbaijani Farmers
+          </p>
+
+          <p className="text-lg text-muted-foreground text-balance mb-8 max-w-2xl mx-auto italic">
+            "Empowering Azerbaijani Farmers with Smart, Sustainable, and Simple Crop Protection"
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
