@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge"
 
 export function AchievementsSection() {
   return (
-    <section className="py-20 bg-muted/30">
+    <section id="achievements" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-6 text-balance">Project Progress & Achievements</h2>

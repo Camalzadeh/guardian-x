@@ -6,7 +6,7 @@ export function DeviceShowcaseSection() {
   const [showScadCode, setShowScadCode] = useState(false)
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/20">
+    <section id="device-showcase" className="py-20 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">Guardian-X Detector Hardware</h2>
