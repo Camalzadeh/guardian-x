@@ -1,15 +1,20 @@
 "use client"
 
-import { Canvas } from "@react-three/fiber"
-import { OrbitControls, Environment, Html } from "@react-three/drei"
-import { Suspense, useRef, useState } from "react"
-import type { Mesh } from "three"
+import dynamic from "next/dynamic"
+import { Suspense, useState } from "react"
 import Image from "next/image"
+
+const Canvas = dynamic(() => import("@react-three/fiber").then((mod) => ({ default: mod.Canvas })), { ssr: false })
+const OrbitControls = dynamic(() => import("@react-three/drei").then((mod) => ({ default: mod.OrbitControls })), {
+  ssr: false,
+})
+const Environment = dynamic(() => import("@react-three/drei").then((mod) => ({ default: mod.Environment })), {
+  ssr: false,
+})
+const Html = dynamic(() => import("@react-three/drei").then((mod) => ({ default: mod.Html })), { ssr: false })
 
 // Guardian-X Detector 3D Model Component
 function GuardianXDetector() {
-  const meshRef = useRef<Mesh>(null)
-
   return (
     <group>
       {/* Main Enclosure Base */}
@@ -71,19 +76,39 @@ function GuardianXDetector() {
   )
 }
 
-function LoadingFallback() {
+function ThreeDViewer({ isRotating, setIsRotating }: { isRotating: boolean; setIsRotating: (value: boolean) => void }) {
   return (
-    <Html center>
-      <div className="text-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-2"></div>
-        <p className="text-sm text-muted-foreground">Loading 3D Model...</p>
-      </div>
-    </Html>
+    <div className="w-full h-[500px] bg-gradient-to-br from-muted/10 to-muted/30 rounded-2xl overflow-hidden border">
+      <Canvas
+        camera={{ position: [15, 10, 15], fov: 50 }}
+        style={{ background: "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)" }}
+      >
+        <Suspense fallback={null}>
+          <ambientLight intensity={0.6} />
+          <directionalLight position={[10, 10, 5]} intensity={1} />
+          <pointLight position={[-10, -10, -5]} intensity={0.3} />
+
+          <GuardianXDetector />
+
+          <OrbitControls
+            enablePan={false}
+            enableZoom={true}
+            autoRotate={isRotating}
+            autoRotateSpeed={2}
+            minDistance={10}
+            maxDistance={30}
+          />
+
+          <Environment preset="studio" />
+        </Suspense>
+      </Canvas>
+    </div>
   )
 }
 
 export function DeviceShowcaseSection() {
   const [isRotating, setIsRotating] = useState(true)
+  const [is3DLoaded, setIs3DLoaded] = useState(false)
 
   return (
     <section className="py-20 bg-gradient-to-b from-background to-muted/20">
@@ -99,40 +124,26 @@ export function DeviceShowcaseSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* 3D Model Viewer */}
           <div className="relative">
-            <div className="w-full h-[500px] bg-gradient-to-br from-muted/10 to-muted/30 rounded-2xl overflow-hidden border">
-              <Canvas
-                camera={{ position: [15, 10, 15], fov: 50 }}
-                style={{ background: "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)" }}
-              >
-                <Suspense fallback={<LoadingFallback />}>
-                  <ambientLight intensity={0.6} />
-                  <directionalLight position={[10, 10, 5]} intensity={1} />
-                  <pointLight position={[-10, -10, -5]} intensity={0.3} />
-
-                  <GuardianXDetector />
-
-                  <OrbitControls
-                    enablePan={false}
-                    enableZoom={true}
-                    autoRotate={isRotating}
-                    autoRotateSpeed={2}
-                    minDistance={10}
-                    maxDistance={30}
-                  />
-
-                  <Environment preset="studio" />
-                </Suspense>
-              </Canvas>
-            </div>
-
-            <div className="absolute bottom-4 left-4 flex gap-2">
-              <button
-                onClick={() => setIsRotating(!isRotating)}
-                className="px-3 py-1 bg-background/80 backdrop-blur-sm rounded-lg text-sm border hover:bg-background transition-colors"
-              >
-                {isRotating ? "Pause" : "Rotate"}
-              </button>
-            </div>
+            {typeof window !== "undefined" ? (
+              <>
+                <ThreeDViewer isRotating={isRotating} setIsRotating={setIsRotating} />
+                <div className="absolute bottom-4 left-4 flex gap-2">
+                  <button
+                    onClick={() => setIsRotating(!isRotating)}
+                    className="px-3 py-1 bg-background/80 backdrop-blur-sm rounded-lg text-sm border hover:bg-background transition-colors"
+                  >
+                    {isRotating ? "Pause" : "Rotate"}
+                  </button>
+                </div>
+              </>
+            ) : (
+              <div className="w-full h-[500px] bg-gradient-to-br from-muted/10 to-muted/30 rounded-2xl overflow-hidden border flex items-center justify-center">
+                <div className="text-center">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-2"></div>
+                  <p className="text-sm text-muted-foreground">Loading 3D Model...</p>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Technical Specifications */}

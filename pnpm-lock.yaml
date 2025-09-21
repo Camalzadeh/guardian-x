@@ -177,7 +177,7 @@ importers:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@4.1.9)
       three:
-        specifier: latest
+        specifier: 0.180.0
         version: 0.180.0
       vaul:
         specifier: ^0.9.9
