@@ -18,7 +18,7 @@ export function Footer() {
                 robotics, and sustainable technology.
               </p>
               <p className="text-sm text-primary-foreground/60">
-                Selected by Startup School 3 Azerbaijan International Acceleration Program
+                The startup has been selected to the International Acceleration Program by Startup School 3 Azerbaijan
               </p>
             </div>
 
