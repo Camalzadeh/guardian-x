@@ -1,30 +1,96 @@
-# Website setup
+# Guardian-X
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+**Smart Crop Protection & Pest Monitoring System for Azerbaijani Farmers**
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/humbet9996-1434s-projects/v0-website-setup)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/4nGkNMCBDlm)
+---
 
-## Overview
+## 📋 Məzmun
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+1. [Layihə haqqında](#layihə-haqqında)  
+2. [Xüsusiyyətlər](#xüsusiyyətlər)  
+3. [Texniki Detallar](#texniki-detallar)  
+4. [İstifadəsi](#istifadəsi)  
+5. [Tələb olunanlar](#tələb-olunanlar)  
+6. [Gələcək Planlar](#gələcək-planlar)  
+7. [Müəlliflər](#müəlliflər)  
+8. [Əlaqə](#əlaqə)
 
-## Deployment
+---
 
-Your project is live at:
+## Layihə haqqında
 
-**[https://vercel.com/humbet9996-1434s-projects/v0-website-setup](https://vercel.com/humbet9996-1434s-projects/v0-website-setup)**
+Guardian-X, Azərbaycan fermerləri üçün hazırlanmış tam inteqrasiyalı zərərvericilərin monitorinqi və bitki qorunması sistemidir. Məqsəd:  
+- Pestlərə vaxtında reaksiya  
+- Pestisid istifadəsinin azaldılması  
+- Fermerlərə texnologiyanın əlçatan olması  
 
-## Build your app
+---
 
-Continue building your app on:
+## Xüsusiyyətlər
 
-**[https://v0.app/chat/projects/4nGkNMCBDlm](https://v0.app/chat/projects/4nGkNMCBDlm)**
+- 🤖 AI ilə zərərverici aşkarlanması  
+- ☀️ Günəş enerjisi ilə işləyən qurğular  
+- 📲 SMS və mobil tətbiq vasitəsilə xəbərdarlıqlar  
+- 🗺 Tercih edilən zaman xəritə və vizuallaşdırma  
+- 🌐 Çoxdilli dəstək (Azərbaycan, İngilis, Rus)  
+- 🧪 Real-dünya testləri, davamlı təkmilləşdirmə  
 
-## How It Works
+---
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Texniki Detallar
+
+- **Hardware**: Raspberry Pi Zero 2 W, yüksək keyfiyyətli kamera modulları, batareya + günəş paneli  
+- **Mühit**: Dayanıqlı və suya, toza qarşı qorunma (IP65)  
+- **Bağlantı**: WiFi, mobil şəbəkə (SMS)  
+- **Temperatura tolerantlığı**: −20 °C ‒ +60 °C  
+- **Frontend / Web**: Vercel üzərində hostlanır  
+- **Backend / AI modelləri**: Yerli modellər / bulud serverləri  
+
+---
+
+## İstifadəsi
+
+1. **Saytı nəzərdən keçirmək** — [Guardian-X Website](https://v0-website-setup-gamma.vercel.app/)  
+2. **Broşürü yüklə** — Texniki spesifikasiyalar üçün fayllar (SCAD / PDF).  
+3. **Əlaqə forması** dolduraraq əlavə məlumat al.  
+4. **Pilot testlərə qoşul və dəstək ol.**
+
+---
+
+## Tələb olunanlar
+
+- İnternet bağlantısı (xəbərdarlıq / SMS üçün)  
+- Günəş paneli olan cihaz üçün günəş işığı  
+- Smart telefon və ya SMS qəbul edə bilən telefon  
+- Müvafiq yerli pest kontrol bilikləri (istəyə bağlı)  
+
+---
+
+## Gələcək Planlar
+
+- Daha çox lokal pest növünün aşkarlanması  
+- Offline rejim imkanlarının artırılması  
+- Mobil tətbiq (Android / iOS)  
+- Müxtəlif iqlimlər və ərazilər üçün opsiyalar  
+
+---
+
+## Müəlliflər
+
+- **Farida Orucova** — Frontend Developer & UI/UX Designer  
+- **Hümbət Camalov** — Robotics Engineer, Mobile Developer  
+- **İsmayıl Yusifli** — Backend Developer  
+- **Hüseyn Paşayev** — AI/ML Engineer  
+- **Azerin Salahova** — Data Scientist  
+
+---
+
+## Əlaqə
+
+📧 **guardianx.agrar@gmail.com**  
+📞 **+994 55 386 55 84**  
+📍 Azərbaycan  
+
+---
+
+**Guardian-X — Smart, Sustainable, Simple.**
