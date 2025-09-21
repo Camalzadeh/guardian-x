@@ -24,12 +24,14 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button size="lg" className="w-full sm:w-auto">
-              Learn More
-              <ArrowRight className="ml-2 h-4 w-4" />
+            <Button size="lg" className="w-full sm:w-auto" asChild>
+              <a href="#problem">
+                Learn More
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
             </Button>
-            <Button variant="outline" size="lg" className="w-full sm:w-auto bg-transparent">
-              Contact Us
+            <Button variant="outline" size="lg" className="w-full sm:w-auto bg-transparent" asChild>
+              <a href="#contact">Get Started</a>
             </Button>
           </div>
 

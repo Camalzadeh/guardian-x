@@ -127,9 +127,13 @@ export function ContactSection() {
                   and increase your yields sustainably.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg">Schedule a Demo</Button>
-                  <Button variant="outline" size="lg">
-                    Download Brochure
+                  <Button size="lg" asChild>
+                    <a href="#contact">Schedule a Demo</a>
+                  </Button>
+                  <Button variant="outline" size="lg" asChild>
+                    <a href="/guardian-x-brochure.pdf" download="Guardian-X-Brochure.pdf">
+                      Download Brochure
+                    </a>
                   </Button>
                 </div>
               </CardContent>

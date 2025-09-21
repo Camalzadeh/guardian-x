@@ -74,10 +74,12 @@ export function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="outline" size="sm">
-              Learn More
+            <Button variant="outline" size="sm" asChild>
+              <a href="#problem">Learn More</a>
             </Button>
-            <Button size="sm">Get Started</Button>
+            <Button size="sm" asChild>
+              <a href="#contact">Get Started</a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -111,10 +113,12 @@ export function Header() {
                 Contact
               </a>
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline" size="sm">
-                  Learn More
+                <Button variant="outline" size="sm" asChild>
+                  <a href="#problem">Learn More</a>
                 </Button>
-                <Button size="sm">Get Started</Button>
+                <Button size="sm" asChild>
+                  <a href="#contact">Get Started</a>
+                </Button>
               </div>
             </div>
           </nav>
