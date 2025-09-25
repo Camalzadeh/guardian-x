@@ -29,7 +29,6 @@ export function ContactSection() {
               <CardContent>
                 <form action="https://formsubmit.co/guardianx.agrar@gmail.com" method="POST" className="space-y-6">
                   <input type="hidden" name="_captcha" value="false" />
-                  <input type="hidden" name="_next" value="https://guardian-x.vercel.app" />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
